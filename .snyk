@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.19.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:qs:20170213':
@@ -26,4 +26,24 @@ ignore:
     - tap > nyc > test-exclude > micromatch > snapdragon > base > cache-base > set-value:
         reason: Ignore
         expires: '2020-11-27T21:12:11.858Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - tap > nyc > istanbul-lib-instrument > babel-types > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-generator > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-traverse > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-template > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-generator > babel-types > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-traverse > babel-types > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-template > babel-types > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-template > babel-traverse > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
+    - tap > nyc > istanbul-lib-instrument > babel-template > babel-traverse > babel-types > lodash:
+        patched: '2020-12-02T19:51:41.782Z'
