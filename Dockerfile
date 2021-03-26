@@ -1,4 +1,4 @@
-FROM node:14.1.0
+FROM node:15.12-buster-slim
 
 RUN apt-get install -y imagemagick
 
