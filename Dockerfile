@@ -1,4 +1,4 @@
-FROM node:14.1.0
+FROM node:16.0-buster-slim
 
 LABEL org.opencontainers.image.source="https://github.com/snyk-schmidtty/goof-github"
 
