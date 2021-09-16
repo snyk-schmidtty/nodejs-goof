@@ -1,4 +1,4 @@
-name: Snyk Scan
+name: Snyk SCA Scan
 
 on:
   push:
