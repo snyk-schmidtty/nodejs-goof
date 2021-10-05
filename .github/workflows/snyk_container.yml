@@ -1,4 +1,4 @@
-name: Snyk Container Scan
+name: Snyk Container Scan 2
 
 on:
   push:
