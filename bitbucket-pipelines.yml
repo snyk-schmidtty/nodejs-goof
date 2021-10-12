@@ -28,3 +28,16 @@ pipelines:
               DONT_BREAK_BUILD: "true"
               MONITOR: "true"
               EXTRA_ARGS: "--project-name=docker-image|goof-bitbucket-pipelines"
+    - step:
+        name: Snyk Scan
+        caches:
+          - node
+        script:
+          - npm install
+          - npm install -g snyk
+          - snyk auth $SNYK_TOKEN
+          - snyk code test --sarif > snyk_results.sarif
+        artifacts:
+          download: true
+          paths:
+            - snyk_results.sarif
