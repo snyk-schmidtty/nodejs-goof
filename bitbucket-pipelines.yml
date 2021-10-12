@@ -32,7 +32,7 @@ pipelines:
               IMAGE_NAME: "snykschmidtty/goof:latest"
               DONT_BREAK_BUILD: "true"
               MONITOR: "true"
-              EXTRA_ARGS: "--project-name=docker-image|goof-bitbucket-pipelines"
+              EXTRA_ARGS: "--project-name=docker-image|goof-bitbucket-pipelines --app-vulns"
         artifacts:
           download: true
           paths:
