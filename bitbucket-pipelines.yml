@@ -10,6 +10,7 @@ pipelines:
     - step:
         caches:
           - node
+          - docker
         script: # Modify the commands below to build your repository.
           - npm install
           - npm install -g snyk
