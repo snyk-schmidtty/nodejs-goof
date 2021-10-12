@@ -12,15 +12,19 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
+          - npm install -g snyk
+          - snyk auth $SNYK_TOKEN
+          - snyk code test --sarif > snykcode_results.sarif          
           - docker build -t snykschmidtty/goof:latest .
-          - pipe: snyk/snyk-scan:0.4.6
+          - pipe: snyk/snyk-scan:0.5.1
             variables:
               SNYK_TOKEN: $SNYK_TOKEN
               LANGUAGE: "npm"
               DONT_BREAK_BUILD: "true"
               MONITOR: "true"
+              CODE_INSIGHTS_RESULTS: "true"
               EXTRA_ARGS: "--project-name=goof-bitbucket-pipelines --remote-repo-url=goof-bitbucket-pipelines"
-          - pipe: snyk/snyk-scan:0.4.6
+          - pipe: snyk/snyk-scan:0.5.1
             variables:
               SNYK_TOKEN: $SNYK_TOKEN
               LANGUAGE: "docker"
@@ -28,16 +32,7 @@ pipelines:
               DONT_BREAK_BUILD: "true"
               MONITOR: "true"
               EXTRA_ARGS: "--project-name=docker-image|goof-bitbucket-pipelines"
-    - step:
-        name: Snyk Scan
-        caches:
-          - node
-        script:
-          - npm install
-          - npm install -g snyk
-          - snyk auth $SNYK_TOKEN
-          - snyk code test --sarif > snyk_results.sarif
         artifacts:
           download: true
           paths:
-            - snyk_results.sarif
+            - snykcode_results.sarif
