@@ -14,7 +14,7 @@ pipelines:
           - npm install
           - npm install -g snyk
           - snyk auth $SNYK_TOKEN
-          - snyk code test --sarif > snykcode_results.sarif          
+          - snyk code test --sarif > snykcode_results.sarif || true         
           - docker build -t snykschmidtty/goof:latest .
           - pipe: snyk/snyk-scan:0.5.1
             variables:
