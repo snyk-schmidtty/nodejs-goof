@@ -1,4 +1,4 @@
-name: "Snyk Code Scan  "
+name: "Snyk Code Scan"
 
 on:
   push:
@@ -33,3 +33,8 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         sarif_file: results.sarif
+    - name: Archive Snyk Code Coverage Results
+      uses: actions/upload-artifact@v2
+      with:
+          name: Archive Snyk Code Coverage Results
+          path: results.sarif
