@@ -35,7 +35,7 @@ jobs:
       with: 
         command: monitor
         image: goof-github-actions
-        args: --file=Dockerfile --project-name=docker-image|goof-github-actions --app-vulns
+        args: --file=Dockerfile --project-name=docker-image|goof-github-actions --app-vulns --project-environment=frontend --project-lifecycle=production --project-business-criticality=high --project-tags=CI=GithubActions,PCI=yes
   #snyk_monitor:
    # runs-on: ubuntu-latest
     #steps:
