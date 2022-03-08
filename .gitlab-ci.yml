@@ -3,6 +3,7 @@
 dependancy_scanning:
   image: node:latest
   stage: test
+  allow_failure: true
   script:
     # Install npm, snyk, and snyk-to-html
     - npm install -g npm@latest
