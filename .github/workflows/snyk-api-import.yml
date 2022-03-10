@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      SNYK_LOG_PATH: "."
        
     steps:
     # Checkout Code
@@ -25,5 +26,5 @@ jobs:
     # Run snyk-api-import
     - name: Run snyk-api-import
       run: |
-         snyk-api-import --file=import-projects.json
+         snyk-api-import --file=import-projects.json SNYK_LOG_PATH='~/my/path'
       continue-on-error: true
