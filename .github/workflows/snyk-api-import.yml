@@ -22,7 +22,6 @@ jobs:
     - name: Install snyk-api-import
       run: |
          sudo npm install snyk-api-import@latest -g
-         snyk auth ${SNYK_TOKEN}
     # Run snyk-api-import
     - name: Run snyk-api-import
       run: |
