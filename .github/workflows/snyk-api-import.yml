@@ -26,5 +26,6 @@ jobs:
     # Run snyk-api-import
     - name: Run snyk-api-import
       run: |
-         snyk-api-import --file=./.github/workflows/import-projects.json
+         env
+         DEBUG=snyk* snyk-api-import --file=./.github/workflows/import-projects.json
       continue-on-error: true
