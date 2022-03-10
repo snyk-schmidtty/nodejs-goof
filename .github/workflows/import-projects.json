@@ -1,0 +1,14 @@
+{
+  "targets": [
+    {
+      "orgId": "0e415b97-149f-46d2-8728-0f9fda933b27",
+      "integrationId": "a7374b6a-3f5d-4422-b2a2-2d21471a5807",
+      "target": {
+        "name": "goof-github",
+        "owner": "snyk-schmidtty",
+        "branch": "master"
+      },
+      "exclusionGlobs": "fixtures, test"
+    }
+  ]
+}
