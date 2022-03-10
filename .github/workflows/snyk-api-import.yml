@@ -11,7 +11,7 @@ jobs:
     name: 'snyk-api-import'
     runs-on: ubuntu-latest
     env: 
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      SNYK_TOKEN: ${{ secrets.SNYK_API }}
       SNYK_LOG_PATH: "."
        
     steps:
