@@ -40,3 +40,8 @@ jobs:
       with:
           name: Archive Snyk Code Coverage Results
           path: results.sarif
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+          name: Snyk HTML Report
+          path: results_code.html
