@@ -39,4 +39,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: Archive Snyk Code Coverage Results
-          path: results.sarif, results_code.html
+          path: | 
+            results.sarif
+            results_code.html
