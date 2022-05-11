@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.14.1
+version: v1.25.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:qs:20170213':
@@ -26,4 +26,9 @@ ignore:
     - tap > nyc > test-exclude > micromatch > snapdragon > base > cache-base > set-value:
         reason: Ignore
         expires: '2020-11-27T21:12:11.858Z'
+  SNYK-CC-K8S-41:
+    - 'goof-mongo-deployment.yaml > [DocId: 1] > spec > template > spec > containers[goof-mongo] > livenessProbe':
+        reason: None Given
+        expires: 2022-05-12T19:14:16.787Z
+        created: 2022-04-12T19:14:16.791Z
 patch: {}
