@@ -22,11 +22,13 @@ jobs:
     - name: Install Snyk & Authenticate
       run: |
          sudo npm install -g snyk
+         sudo npm install -g snyk-to-html
          snyk auth ${SNYK_TOKEN}
     # Run Snyk Code
     - name: Run Snyk Code
       run: |
          snyk code test --sarif  > results.sarif
+         snyk-to-html -i results.sarif -o results_code.html
       continue-on-error: true
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
@@ -37,4 +39,6 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: Archive Snyk Code Coverage Results
-          path: results.sarif
+          path: | 
+            results.sarif
+            results_code.html
