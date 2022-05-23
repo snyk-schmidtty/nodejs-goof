@@ -29,5 +29,5 @@
         "branch": "master"
       },
       "exclusionGlobs": "fixtures, test"
-  ]
+    }
 }
