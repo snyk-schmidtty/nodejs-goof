@@ -20,5 +20,14 @@
       },
       "exclusionGlobs": "fixtures, test"
     }
+    {
+      "orgId": "54c6a5a5-1f23-46e2-8853-3a6acdaecd46",
+      "integrationId": "76ee71c4-f168-4737-99dd-2d18b8703b63",
+      "target": {
+        "name": "juice-shop",
+        "owner": "snyk-schmidtty",
+        "branch": "master"
+      },
+      "exclusionGlobs": "fixtures, test"
   ]
 }
