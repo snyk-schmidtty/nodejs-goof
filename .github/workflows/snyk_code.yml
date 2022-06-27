@@ -40,5 +40,5 @@ jobs:
       with:
           name: Archive Snyk Code Scan Results
           path: | 
-            results.sarif
+            results_code.sarif
             results_code.html
