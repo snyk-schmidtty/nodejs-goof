@@ -8,7 +8,7 @@ on:
 jobs:
   Pipeline-Job:
     # Configure Environment
-    name: 'Snyk Code Scan'
+    name: 'Snyk Platform Scan'
     runs-on: ubuntu-latest
     env: 
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -25,7 +25,7 @@ jobs:
          sudo npm install -g snyk-to-html
          snyk auth ${SNYK_TOKEN}
     # Run Snyk Code
-    - name: Run Snyk Code
+    - name: Run Snyk
       run: |
          snyk code test --sarif  > results_code.sarif
          snyk-to-html -i results_code.sarif -o results_code.html
