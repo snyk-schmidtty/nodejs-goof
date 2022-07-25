@@ -19,6 +19,15 @@
         "branch": "master"
       },
       "exclusionGlobs": "fixtures, test"
-    }
+    },
+    {
+      "orgId": "0e415b97-149f-46d2-8728-0f9fda933b27",
+      "integrationId": "0e33153e-7323-4f87-92ac-27c2d4fb1f37",
+      "target": {
+        "projectKey": "BB",
+        "repoSlug": "juice-shop",
+        "branch": "master"
+      },
+      "exclusionGlobs": "fixtures, test"
   ]
 }
