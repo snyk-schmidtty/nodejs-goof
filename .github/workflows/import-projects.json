@@ -25,8 +25,8 @@
       "integrationId": "0e33153e-7323-4f87-92ac-27c2d4fb1f37",
       "target": {
         "projectKey": "BB",
-        "repoSlug": "juice-shop",
-        "branch": "master"
+        "repoSlug": "shallow-goof",
+        "branch": "policy-file"
       },
       "exclusionGlobs": "fixtures, test"
     }
