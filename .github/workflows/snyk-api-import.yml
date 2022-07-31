@@ -28,3 +28,10 @@ jobs:
       run: |
          snyk-api-import --file=./.github/workflows/import-projects.json
       continue-on-error: true
+    - name: Archive Snyk Code Coverage Results
+      uses: actions/upload-artifact@v2
+      with:
+          name: Archive Snyk Code Scan Results
+          path: | 
+            results_code.sarif
+            results_code.html
