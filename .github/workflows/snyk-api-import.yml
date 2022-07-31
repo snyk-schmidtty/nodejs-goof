@@ -27,6 +27,7 @@ jobs:
     - name: Run snyk-api-import
       run: |
          snyk-api-import --file=./.github/workflows/import-projects.json
+         ls
       continue-on-error: true
     - name: Archive Snyk Code Coverage Results
       uses: actions/upload-artifact@v2
