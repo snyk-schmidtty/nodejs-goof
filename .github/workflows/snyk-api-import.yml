@@ -33,6 +33,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: Archive Snyk Code Scan Results
-          path: | 
-            results_code.sarif
-            results_code.html
+          path: |
+            import-job-results.log
+            imported-batches.log
+            imported-targets.log
