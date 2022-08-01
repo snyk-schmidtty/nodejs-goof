@@ -1,4 +1,4 @@
-FROM node:14.17.3
+FROM node:16.15.1
 
 LABEL org.opencontainers.image.source="https://github.com/snyk-schmidtty/goof-github"
 
