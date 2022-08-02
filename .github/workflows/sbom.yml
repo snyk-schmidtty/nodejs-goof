@@ -8,7 +8,7 @@ on:
 jobs:
   Pipeline-Job:
     # Configure Environment
-    name: 'Snyk Platform Scan'
+    name: 'Generate SBOM'
     runs-on: ubuntu-latest
     env: 
       SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -25,7 +25,6 @@ jobs:
          -H "Accept: application/vnd.api+json" \
          -H "Accept: application/vnd.cyclonedx+json" \
          -H "Authorization: token ${SNYK_TOKEN}" \
-         > cyclonedx.json
 
     - name: Archive SBOM
       uses: actions/upload-artifact@v2
