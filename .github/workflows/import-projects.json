@@ -4,9 +4,9 @@
       "orgId": "0e415b97-149f-46d2-8728-0f9fda933b27",
       "integrationId": "a7374b6a-3f5d-4422-b2a2-2d21471a5807",
       "target": {
-        "name": "goof-github",
+        "name": "shallow-goof",
         "owner": "snyk-schmidtty",
-        "branch": "master"
+        "branch": "policy-file"
       },
       "exclusionGlobs": "fixtures, test"
     },
@@ -17,6 +17,16 @@
         "name": "OWASP-NodeGoat",
         "owner": "snyk-schmidtty",
         "branch": "master"
+      },
+      "exclusionGlobs": "fixtures, test"
+    },
+    {
+      "orgId": "0e415b97-149f-46d2-8728-0f9fda933b27",
+      "integrationId": "0e33153e-7323-4f87-92ac-27c2d4fb1f37",
+      "target": {
+        "projectKey": "BB",
+        "repoSlug": "shallow-goof",
+        "branch": "policy-file"
       },
       "exclusionGlobs": "fixtures, test"
     }
