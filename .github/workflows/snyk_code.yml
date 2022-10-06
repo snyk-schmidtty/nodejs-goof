@@ -30,15 +30,15 @@ jobs:
          snyk code test --sarif  > results_code.sarif
          snyk-to-html -i results_code.sarif -o results_code.html
       continue-on-error: true
-    - name: Upload SARIF file
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-        # Path to SARIF file relative to the root of the repository
-        sarif_file: results.sarif
     - name: Archive Snyk Code Coverage Results
       uses: actions/upload-artifact@v2
       with:
           name: Archive Snyk Code Scan Results
           path: | 
             results_code.sarif
-            results_code.html
+            results_code.html  
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: results_code.sarif
