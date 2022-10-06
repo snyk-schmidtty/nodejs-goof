@@ -28,9 +28,11 @@ jobs:
     - name: Run Snyk Code
       run: |
          snyk code test --sarif  > results_code.sarif
+    - name: Run snyk-to-html
+      run: |
          snyk-to-html -i results_code.sarif -o results_code.html
       continue-on-error: true
-    - name: Archive Snyk Code Coverage Results
+    - name: Archive Snyk Scan Results
       uses: actions/upload-artifact@v2
       with:
           name: Archive Snyk Code Scan Results
