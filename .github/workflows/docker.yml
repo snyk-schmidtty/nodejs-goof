@@ -19,4 +19,4 @@ jobs:
     - name: Build the Docker image
       run: DOCKER_BUILDKIT=1 docker build . --file Dockerfile --tag snykschmidtty/nodejs-goof:latest
     - name: Docker Push
-      run: docker push snykschmidtty/goof:latest
+      run: docker push snykschmidtty/nodejs-goof:latest
