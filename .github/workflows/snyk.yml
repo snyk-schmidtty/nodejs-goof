@@ -17,7 +17,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           command: monitor
-          args: --project-name=goof-github-actions --remote-repo-url=goof-github-actions --project-environment=frontend --project-lifecycle=production --project-business-criticality=high --project-tags=CI=GithubActions,PCI=yes,component=pkg:github/snyk-schmidtty/nodejs-goof@master
+          args: --project-name=nodejs-goof-github-actions --remote-repo-url=nodejs-goof-github-actions --project-environment=frontend --project-lifecycle=production --project-business-criticality=high --project-tags=CI=GithubActions,PCI=yes,component=pkg:github/snyk-schmidtty/nodejs-goof@master
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v1
         with:
