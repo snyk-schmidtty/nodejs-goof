@@ -1,19 +1,18 @@
 
 var express = require('express')
-var typeorm = require("typeorm");
+var dataSource = require('../typeorm-db')
 
 var router = express.Router()
 module.exports = router
 
 router.get('/', async (req, res, next) => {
 
-  const mongoConnection = typeorm.getConnection('mysql')
-  const repo = mongoConnection.getRepository("Users")
+  const repo = dataSource.getRepository("Users")
 
   // hard-coded getting account id of 1
   // as a rpelacement to getting this from the session and such
   // (just imagine that we implemented auth, etc)
-  const results = await repo.find({ id: 1 })
+  const results = await repo.find({ where: { id: 1 } })
 
   // Log Object's where property for debug reasons:
   console.log('The Object.where property is set to: ', {}.where)
@@ -25,8 +24,7 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
   try {
-    const mongoConnection = typeorm.getConnection('mysql')
-    const repo = mongoConnection.getRepository("Users")
+    const repo = dataSource.getRepository("Users")
 
     const user = {}
     user.name = req.body.name

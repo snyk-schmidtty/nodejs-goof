@@ -1,9 +1,9 @@
-var typeorm = require("typeorm");
+const typeorm = require("typeorm");
 var EntitySchema = typeorm.EntitySchema;
 
 const Users = require("./entity/Users")
 
-typeorm.createConnection({
+const dataSource = new typeorm.DataSource({
   name: "mysql",
   type: "mysql",
   host: "localhost",
@@ -16,11 +16,13 @@ typeorm.createConnection({
   entities: [
     new EntitySchema(Users)
   ]
-}).then(() => {
+})
 
-  const dbConnection = typeorm.getConnection('mysql')
+module.exports = dataSource
 
-  const repo = dbConnection.getRepository("Users")
+dataSource.initialize().then(() => {
+
+  const repo = dataSource.getRepository("Users")
   return repo
 }).then((repo) => {
 
